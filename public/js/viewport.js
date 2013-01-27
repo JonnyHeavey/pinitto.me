@@ -9,7 +9,7 @@ define(['jquery'], function($) {
 	}
 	window.addEventListener('resize', resizeViewport, false);
 	resizeViewport();
-	
+
 	return {
 		scale: 1,
 		offset: { x: $('.viewport-container').offset().left, y: $('.viewport-container').offset().top },
