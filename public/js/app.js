@@ -13,28 +13,33 @@ require.config({
 	},
 	shim: {
 		'growl': {
-			deps: ['jquery', 'ui']
+                    deps: ['jquery', 'ui']
 		},
 		'infinite': {
-			deps: ['jquery', 'ui']
+                    deps: ['jquery', 'ui']
 		},
 		'bootstrap': {
-			deps: ['jquery', 'ui']
+                    deps: ['jquery', 'ui']
 		},
 		'ui': {
-			deps: ['jquery']
+                    deps: ['jquery']
 		},
 		'socket': {
-			deps: ['socket.io']
-		}
+                    deps: ['socket.io']
+		},
+                'connection-status': {
+                    deps: ['bootstrap']
+                },
 	}
 });
 
 require([
 	'jquery', 'viewport', 'user', 'card', 'util/notification', 'socket', 'board',
-	    'board/connection', 'analytics', 'board/infinite-drag', 'modernizer', 'connection-status'], 
-	function($, viewport, user, card, notification, socket, board) {
+	    'connection-status', 'board/connection', 'analytics', 'board/infinite-drag', 'modernizer'], 
+	function($, viewport, user, card, notification, socket, board, connectionStatus) {
 	
+        connectionStatus('offline');
+
 	$('.card').each(function() {
 		if ($(this).css('z-index') > board.zIndex) board.zIndex = $(this).css('z-index')
 		card.dynamify($(this).attr('id'));

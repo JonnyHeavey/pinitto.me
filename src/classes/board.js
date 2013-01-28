@@ -61,6 +61,8 @@ Board.prototype.leave = function() {
 }
 
 Board.prototype.join = function(details) {
+    // This is now handled statically by the webserver
+    return;
 
     this.board     = details.id
 	this.boardName = '/' + this.board

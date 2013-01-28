@@ -185,4 +185,16 @@ img.captcha {
 
 
 
-
+#connection-status-modal.connected {
+    color: #00FF00;
+}
+#connection-status-modal.connecting {
+    color: #FF7216;
+}
+#connection-status-modal.offline {
+    color: #FF0000;
+}
+#connection-status-modal .status-message {
+    line-height: 64px; 
+    margin-left: 90px;
+}
